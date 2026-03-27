@@ -1,4 +1,3 @@
-import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import App from './App';
 import './index.css';
@@ -9,11 +8,7 @@ try {
   const rootElement = document.getElementById('root');
   if (!rootElement) throw new Error('Root element not found');
   
-  createRoot(rootElement).render(
-    <strictmode>
-      <app/>
-    </StrictMode>,
-  );
+  createRoot(rootElement).render(<app/>);
   console.log('SettleEdge: React app rendered successfully.');
 } catch (error) {
   console.error('SettleEdge: Initialization failed:', error);
