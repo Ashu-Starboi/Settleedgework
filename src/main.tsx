@@ -8,7 +8,7 @@ try {
   const rootElement = document.getElementById('root');
   if (!rootElement) throw new Error('Root element not found');
   
-  createRoot(rootElement).render(<app/>);
+  createRoot(rootElement).render(<App/>);
   console.log('SettleEdge: React app rendered successfully.');
 } catch (error) {
   console.error('SettleEdge: Initialization failed:', error);
