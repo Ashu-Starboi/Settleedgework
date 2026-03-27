@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SettleEdge - Loan Settlement Eligibility Check</title>
+  <script type='text/javascript' nonce='oL/tg00O9NRAiH1liRP8zw==' src='https://aistudio.google.com/lHfNX5ZdF96Wjhu_P2YxYZTFqt-WgqMyG1MZiMfLcBeFLv8OopMhnrLScbEONRsuLQxm96tO0Q2EUhLS5Cz51QuUz2PYaTU1lLoPWjIx48whLC5z0J4KD8y8CHLNCZb9l3H3F5TK81-_IFjeSxrxNlraoB5e_1vRk21WEwFH0KgtnY-mito-600ZmcfNVMP9FoIqLRdV2f7Z1BTtcfUY4FwPL18aEVqIEtPJGWiXXFWmSrdi_ExfvfxEfKDuGeSedrpanyumbRfho-DMZZEGDULtTzV2KJgKMF52knA3gAcKPeIsLj-nDaOgMRiYM9ohktAGeduDzk3dvZUgbDLiuOgacvdm9NmNE7C3Yy2Nwh9CHJe8A4w19UFmkE2KJnNHBlRNKCBitbhBz5_UTDU9vYivZbIqevOwxYm6KIc1UE2ucKQ7zOtoa6K0aRSzO4UOS3NuROS8bPm-nb4L_Ko7IJBdpP2AwggtJ0XjTBBA6nf9ldKgr8YmWzGXXeyAuJ4u_eQ0n5JyiPzhULrjx2pa2QAaaStLEy3-f83yaLUCo34EVNSVEc5XkJNX00G-9t35_yWRVl_ERQ538Bq4-bXaoXeiz69X4onW0YcXxyK7qnJaqjyOAA'></script></head>
+  <body>
+    <div id="root">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; color: #1e40af; text-align: center; padding: 20px;">
+        <h1 style="margin-bottom: 10px;">SettleEdge</h1>
+        <p id="loading-status">Loading your eligibility check...</p>
+        <div id="error-display" style="display: none; margin-top: 20px; padding: 15px; background: #fee2e2; color: #991b1b; border-radius: 8px; max-width: 400px; font-size: 14px; text-align: left; overflow-wrap: break-word;">
+          <strong>Error detected:</strong>
+          <pre id="error-message" style="white-space: pre-wrap; margin-top: 10px;"></pre>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        const display = document.getElementById('error-display');
+        const message = document.getElementById('error-message');
+        const status = document.getElementById('loading-status');
+        if (display && message && status) {
+          status.innerText = 'Something went wrong.';
+          display.style.display = 'block';
+          message.innerText = msg + '\nAt: ' + url + ':' + lineNo + ':' + columnNo;
+        }
+        return false;
+      };
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
