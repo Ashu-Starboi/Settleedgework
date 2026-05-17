@@ -7,6 +7,14 @@
   --color-accent: #f59e0b; /* Amber-500 */
 }
 
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: block !important;
+}
+
 @layer base {
   body {
     @apply bg-slate-50 text-slate-900 antialiased;
