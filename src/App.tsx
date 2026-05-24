@@ -239,6 +239,13 @@ export default function App() {
 
         await Promise.race([fetchPromise, timeoutPromise]);
 
+        // Google Ads conversion tracking - fires only after successful form submission
+        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'conversion', {
+            send_to: 'AW-18047895245/jSZUCPu40rIcEM2N9J1D'
+          });
+        }
+
         setSubmitted(true);
         window.location.hash = '';
         window.scrollTo({ top: 0, behavior: 'smooth' });
